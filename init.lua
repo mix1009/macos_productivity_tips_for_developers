@@ -87,3 +87,81 @@ h_bind("6", positionWindow(1/2, 1/2, 1/2, 1/2))
 h_bind("q", positionWindow(0, 0, 2/3, 1))
 h_bind("w", positionWindow(2/3, 0, 1/3, 1))
 
+
+
+-- grid based window functions
+
+hs.grid.setGrid('12x6')
+hs.grid.setMargins('0x0')
+
+h_bind("right", function()
+    local win = hs.window.focusedWindow()
+    if win == nil then return end
+    local screen = win:screen()
+    local sg = hs.grid.getGrid(screen)
+    local g = hs.grid.get(win)
+    if g.x + g.w == sg.w then
+        g.x = g.x + 1
+        g.w = g.w - 1
+        hs.grid.set(win, g)
+    else
+        g.w = g.w + 1
+        hs.grid.set(win, g)
+    end
+end)
+
+h_bind("left", function()
+    local win = hs.window.focusedWindow()
+    if win == nil then return end
+    local screen = win:screen()
+    local sg = hs.grid.getGrid(screen)
+    local g = hs.grid.get(win)
+    if g.x + g.w >= sg.w and g.x ~= 0 then
+        g.x = g.x - 1
+        g.w = g.w + 1
+        hs.grid.set(win, g)
+    else
+        g.w = g.w - 1
+        hs.grid.set(win, g)
+    end
+end)
+
+h_bind("down", function()
+    local win = hs.window.focusedWindow()
+    if win == nil then return end
+    local screen = win:screen()
+    local sg = hs.grid.getGrid(screen)
+    local g = hs.grid.get(win)
+    if g.y + g.h == sg.h then
+        g.y = g.y + 1
+        g.h = g.h - 1
+        hs.grid.set(win, g)
+    else
+        g.h = g.h + 1
+        hs.grid.set(win, g)
+    end
+end)
+
+h_bind("up", function()
+    local win = hs.window.focusedWindow()
+    if win == nil then return end
+    local screen = win:screen()
+    local sg = hs.grid.getGrid(screen)
+    local g = hs.grid.get(win)
+    if g.y + g.h >= sg.h and g.y ~= 0 then
+        g.y = g.y - 1
+        g.h = g.h + 1
+        hs.grid.set(win, g)
+    else
+        g.h = g.h - 1
+        hs.grid.set(win, g)
+    end
+end)
+
+
+hs_bind("right", hs.grid.pushWindowRight)
+hs_bind("left", hs.grid.pushWindowLeft)
+hs_bind("down", hs.grid.pushWindowDown)
+hs_bind("up", hs.grid.pushWindowUp)
+
+
