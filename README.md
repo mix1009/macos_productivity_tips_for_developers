@@ -3,6 +3,7 @@
 YouTube videos:
 * [part 1](https://youtu.be/Bx-ky4p6ToY) : Flour app and Karabiner Elements:
 * [part 2](https://youtu.be/qusbT9v4L-k) : Hammerspoon - launch apps 
+* [part 3](https://youtu.be/ssiZU7zj37c) : Hammerspoon - window management
 
 ## Flour app
 Configure function keys per app.
