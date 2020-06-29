@@ -176,3 +176,17 @@ mouseCircle = hs.loadSpoon("MouseCircle")
 -- mouseCircle:show()
 mouseCircle.color = hs.drawing.color.hammerspoon.white
 mouseCircle:bindHotkeys({show={hyper, 'm'}})
+
+
+-- vi like cursor movements
+keyDelay = 100
+h_bind("h", function() hs.eventtap.keyStroke({}, "left", keyDelay) end, true)
+h_bind("j", function() hs.eventtap.keyStroke({}, "down", keyDelay) end, true)
+h_bind("k", function() hs.eventtap.keyStroke({}, "up", keyDelay) end, true)
+h_bind("l", function() hs.eventtap.keyStroke({}, "right", keyDelay) end, true)
+
+h_bind("f", function() hs.eventtap.keyStroke({}, "pagedown", keyDelay) end, true)
+h_bind("b", function() hs.eventtap.keyStroke({}, "pageup", keyDelay) end, true)
+hs_bind("a", function() hs.eventtap.keyStroke({}, "home", keyDelay) end, true)
+hs_bind("e", function() hs.eventtap.keyStroke({}, "end", keyDelay) end, true)
+
