@@ -26,8 +26,8 @@ function file_exists(path)
     local f=io.open(path,"r")
     if f~=nil then io.close(f) return true else return false end
     -- ~= is != in other languages
- end
- 
+end
+
 function launchApp(name)
     -- .. is concat string operator
     return function()
@@ -56,7 +56,6 @@ h_bind("z", launchApp("Finder"))
 h_bind("n", launchApp("Notes"))
 
 
-
 -- window functions
 
 function positionWindow(x, y, w, h)
@@ -74,7 +73,7 @@ function positionWindow(x, y, w, h)
     end
 end
 
-hs.window.animationDuration = 0
+hs.window.animationDuration = 0 
 
 h_bind("1", positionWindow(0, 0, 1/2, 1))
 h_bind("2", positionWindow(1/2, 0, 1/2, 1))
@@ -86,8 +85,6 @@ h_bind("6", positionWindow(1/2, 1/2, 1/2, 1/2))
 
 h_bind("q", positionWindow(0, 0, 2/3, 1))
 h_bind("w", positionWindow(2/3, 0, 1/3, 1))
-
-
 
 -- grid based window functions
 
@@ -165,3 +162,17 @@ hs_bind("down", hs.grid.pushWindowDown)
 hs_bind("up", hs.grid.pushWindowUp)
 
 
+-- Spoon
+-- install from https://www.hammerspoon.org/Spoons/
+
+clipboardTool = hs.loadSpoon("ClipboardTool")
+clipboardTool.paste_on_select = true
+clipboardTool.show_in_menubar = false
+clipboardTool:start()
+h_bind("v", function() clipboardTool:toggleClipboard() end)
+-- hs_bind("v", function() clipboardTool:clearAll() end)
+
+mouseCircle = hs.loadSpoon("MouseCircle")
+-- mouseCircle:show()
+mouseCircle.color = hs.drawing.color.hammerspoon.white
+mouseCircle:bindHotkeys({show={hyper, 'm'}})
