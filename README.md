@@ -5,6 +5,9 @@ YouTube videos:
 * [part 2](https://youtu.be/qusbT9v4L-k) : Hammerspoon - launch apps 
 * [part 3](https://youtu.be/ssiZU7zj37c) : Hammerspoon - window management
 * [part 4](https://youtu.be/xHZXMr4lUvo) : Hammerspoon - advanced window management with grid module
+* [part 5](https://youtu.be/7LHDVPaKb6M) : Hammerspoon - installing and using Spoons
+* [part 6](https://youtu.be/s_-oniqf0ZU) : Hammerspoon - VI like cursor movements
+
 
 ## Flour app
 Configure function keys per app.
