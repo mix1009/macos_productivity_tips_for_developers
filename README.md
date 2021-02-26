@@ -18,7 +18,7 @@ remap keys.
 https://karabiner-elements.pqrs.org/
 
 ## Karabiner Elements key mapping (caps_lock to cmd+ctrl+option) :
-https://mix1009.com/karabiner.html
+https://mix1009.com/karabiner.html (source available from karabiner_web folder)
 
 ## Hammerspoon
 automation tool for macOS.
