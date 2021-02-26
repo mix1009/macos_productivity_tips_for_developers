@@ -1,0 +1,60 @@
+{
+    "title": "mix1009",
+    "rules": [
+        {
+            "manipulators": [
+                {
+                    "description": "Change caps_lock to command+control+option.",
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_command",
+                            "modifiers": [
+                                "right_control",
+                                "right_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+{
+"description": "Change caps_lock key to command+control+option. (Post escape key when pressed alone)",
+"manipulators": [
+{
+"type": "basic",
+"from": {
+"key_code": "caps_lock",
+"modifiers": {
+"optional": [
+"any"
+]
+}
+},
+"to": [
+{
+"key_code": "right_command",
+"modifiers": [
+"right_control",
+"right_option"
+]
+}
+],
+"to_if_alone": [
+{
+"key_code": "escape"
+}
+]
+}
+]
+}
+    ]
+}
